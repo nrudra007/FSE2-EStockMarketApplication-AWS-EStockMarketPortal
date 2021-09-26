@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+<h2>Basic Search</h2>
+<hr/>
+<div>
+    <input type="text" name="basic" [(ngModel)]="basic" (ngModelChange)="basicSearch()" placeholder="Basic search">
+</div> 
+<br>
+
+<div class="container">
+    <label *ngIf="(emp.length===0) && errMessage" class="error-message">{{ errMessage }}</label>
+    <table class="table basic-search-table" *ngIf='!(emp.length===0)'>  
+        <thead>
+            <tr>
+                <th>Company Code</th>
+                <th>Company Name</th>
+                <th>Company CEO Name</th>
+                <th>Company Turnover</th>
+                <th>Company Website</th>
+                <th>Company Stock Exchange</th>
+                <th>Latest Stock Price</th>
+            </tr>        
+        </thead>
+        <tbody>
+            <tr *ngFor='let c of emp'>
+                <td>{{c.companyCode}}</td>
+                <td>{{c.companyName}}</td>
+                <td>{{c.companyCeoName}}</td>
+                <td>{{c.companyTurnover}}</td>
+                <td>{{c.companyWebsite}}</td>
+                <td>{{c.companyStockExchange}}</td>
+                <td>{{c.latestStockPrice}}</td>
+            </tr>
+        </tbody>           
+    </table>
+</div>
+</div>
+

@@ -1,0 +1,99 @@
+{
+  "company": [
+    {
+      "id": 100,
+      "cname": "Amazon",
+      "stockp": 1000,
+      "startdate": "2000-15-12",
+      "time": "9.00am"
+    },
+    {
+      "id": 200,
+      "cname": "SpaceX",
+      "stockp": 2000,
+      "startdate": "11-21-2000",
+      "time": "10.00am"
+    },
+    {
+      "id": 300,
+      "cname": "RedBull",
+      "stockp": 3000,
+      "startdate": "12-25-2000",
+      "time": "11.00am"
+    },
+    {
+      "id": 400,
+      "cname": "Apple",
+      "stockp": 1231,
+      "startdate": "2021-07-10",
+      "time": "2.00pm"
+    },
+    {
+      "id": 500,
+      "cname": "Cognizant",
+      "stockp": 1234,
+      "startdate": "2021-07-02",
+      "time": "1.00pm"
+    },
+    {
+      "id": 600,
+      "cname": "ScuderiaFerrari",
+      "stockp": 2222,
+      "startdate": "2021-07-01",
+      "time": "6.00PM"
+    },
+    {
+      "id": 700,
+      "cname": "qaz",
+      "stockp": 12312,
+      "startdate": "2021-07-06",
+      "time": "3.00PM"
+    },
+    {
+      "id": 800,
+      "cname": "Qwerty",
+      "stockp": 1212,
+      "startdate": "07/28/2021",
+      "time": "2.00pm"
+    },
+    {
+      "id": 900,
+      "cname": "RoolkitWilliams",
+      "stockp": 3214,
+      "startdate": "2021-07-12",
+      "time": "11.00pm"
+    },
+    {
+      "id": 1000,
+      "cname": "Amazon",
+      "stockp": 2000,
+      "startdate": "2005-01-01",
+      "enddate": "2005-02-01",
+      "time": "9.00am"
+    },
+    {
+      "id": 1100,
+      "cname": "Amazon",
+      "stockp": 3214,
+      "startdate": "2022-01-01",
+      "enddate": "2022-04-01",
+      "time": "4.00pm"
+    },
+    {
+      "id": 1200,
+      "cname": "Redbull",
+      "stockp": 4321,
+      "startdate": "2021-08-01",
+      "enddate": "2021-12-01",
+      "time": "5.00pm"
+    },
+    {
+      "id": 1300,
+      "cname": "Cognizant",
+      "stockp": 4433,
+      "startdate": "2021-07-23",
+      "enddate": "2022-01-01",
+      "time": "6.00am"
+    }
+  ]
+}

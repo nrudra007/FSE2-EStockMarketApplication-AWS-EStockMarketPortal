@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <form class="container-fluid justify-content-start">
+
+    <div class="container-fluid">
+        <a (click)="routeToHome()">
+            <img
+            class="logo"
+            alt="E-Stock Market Logo"
+            src="./assets/images/e-stock-logo.jpg"
+            />
+        </a>
+      </div>
+      
+        <div style="margin-right: 2cm;">
+    <button (click)='routeToAllRecords()' class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">All Companies</button>
+</div>
+    
+<div style="margin-right: 2cm;">
+        <a routerLink="/add" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Add Company</a>
+       
+    </div>
+        <div style="margin-right: 2cm;">
+            <button (click)="routeToAdvanceSearch()" id="bt" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Advance Search</button>
+        </div>
+        <div style="margin-right: 2cm;">
+            <button (click)="routeToBasicSearch()" id="bt" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Basic Search</button>
+        </div>
+        <div style="margin-right: 2cm;">
+            <button (click)="logout()" id="bt" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Logout</button>
+        </div>
+        </form>
+  </nav>
+  <br>

@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2>Add Company</h2>
+    <hr/>
+    <label *ngIf="errMessage" class="error-message">{{ errMessage }}</label>
+    <form [formGroup]="addcom" (ngSubmit)="addCompany()" class="form-group">
+    <table class="add-comp-table"> 
+        <thead>
+            <tr>
+                <th>Company Code</th>
+                <th>Company Name</th>
+                <th>Company CEO Name</th>
+                <th>Company Turnover</th>
+                <th>Company Website</th>
+                <th>Company Stock Exchange</th>
+            </tr>        
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" formControlName="companyCode" class="form-control" required></td>
+                <td><input type="text" formControlName="companyName" class="form-control" required></td>
+                <td><input type="text" formControlName="companyCeoName" class="form-control" required></td>
+                <td><input type="number" formControlName="companyTurnover" class="form-control" required></td>
+                <td><input type="text" formControlName="companyWebsite" class="form-control" required></td>
+                <td>
+                    <select formControlName="companyStockExchange" class="form-control stock-exchange">
+                        <option>Choose Stock Exchange</option>  
+                        <option *ngFor="let stockExchange of companyStockExchangeList">{{stockExchange}}</option>  
+                    </select>  
+                </td>
+            </tr>
+            <tr>
+                <div><button type="submit" class="btn mr-md-2 mb-md-0 mb-2 btn-primary add-btn">Register Company</button></div>
+            </tr>       
+        </tbody>       
+    </table>
+    </form>
+</div>

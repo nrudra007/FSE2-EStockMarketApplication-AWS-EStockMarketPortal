@@ -1,0 +1,146 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <form class="container-fluid justify-content-start">
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">CTS</a>
+      </div>
+      
+        <div style="margin-right: 2cm;">
+    <button (click)='AllRecord()' class="btn btn-success">All Companies</button>
+</div>
+    
+<div style="margin-right: 2cm;">
+        <a routerLink="/add" class="btn btn-success">Add Company</a>
+       
+    </div>
+            <!-- <input type="text" name="cname" [(ngModel)]="cname" (ngModelChange)="Search()"> -->
+            <!-- <input type="date" name="date" [(ngModel)]="date" (ngModelChange)="Search()"> -->
+            <div style="margin-right: 2cm;">
+              <button (click)="toggle()" id="bt" class="btn btn-success">{{buttonName}}</button>
+          </div> 
+         
+          <div style="margin-right: 2cm;">
+            <input type="text" name="basic" [(ngModel)]="basic" (ngModelChange)="Search2()" placeholder="Basic search">
+        </div> 
+        <div style="margin-right: 2cm;">
+          <button (click)='logout()' class="btn btn-success">Logout</button>
+      </div>
+        
+        </form>
+  </nav>
+  <br>
+
+<div>
+<!-- <div class="row">
+    <div class="col-6">
+<button (click)='AllRecord()' class="btn btn-success">Load All Companies</button>
+</div>
+<div class="col-6">
+    <a routerLink="/add" class="btn btn-success">Add Company</a>
+    </div>
+    <div class="col-6">
+        <input type="text" name="cname" [(ngModel)]="cname" (ngModelChange)="Search()">
+        </div>
+    
+    </div> -->
+
+
+<br>
+
+<form #addClientForm="ngForm" (ngSubmit)="Search()" novalidate *ngIf="show">  
+    <div class="row" style="margin-top:10px;margin-bottom: 10px;">    
+      <div class="col-sm-3 form-group">  </div> 
+        <div class="col-sm-3 form-group">    
+        <input  
+        type="text" name="cname"  
+        [(ngModel)]="cname"   
+        placeholder="Company name"  
+        class="form-control"/>  
+    </div> 
+       
+  <div class="col-sm-3 form-group">    
+      <input  
+      type="date" name="startdate"  
+      [(ngModel)]="startdate"   
+      placeholder="From Date"  
+      class="form-control"/>  
+  </div>     
+  <div class="col-sm-3 form-group">    
+      <input type="date"  name="enddate"  
+      [(ngModel)]="enddate"   
+      placeholder="To Date"  
+       
+        class="form-control"/>  
+  </div>    
+  <div class="col-sm-3 form-group">    
+      <button type="submit" class="btn btn-success" >Search</button>   
+  </div>  
+</div>  
+  </form>   
+
+
+<br>
+
+<!-- <table class="table">  
+    <thead class="thead-dark">  
+      <tr>  
+        <th scope="col">Id</th>  
+        <th scope="col">Name</th>  
+        <th scope="col">City</th>  
+        <th scope="col">JoiningDate</th>  
+      </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let emp of emp">  
+        <th scope="row">{{emp.Id}}</th>  
+        <td>{{emp.Name}}</td>  
+        <td>{{emp.City}}</td>  
+        <td>{{emp.JoiningDate | date:'yyyy-MM-dd'}}</td>  
+      </tr>  
+      <tr *ngIf="!emp||emp.length==0">  
+        <td colspan="4">  
+            No Data Found  
+        </td>  
+      </tr>  
+    </tbody>  
+  </table> -->
+
+
+
+<!-- <input type="text" #myInput [(ngModel)]="cname" (input)="Search()"> -->
+ <table class="table table-striped" *ngIf='!(emp.length===0)'> 
+  
+<thead>
+<tr>
+  <th>Company Code</th>
+  <th>Company Name</th>
+  <th>Company CEO Name</th>
+  <th>Company Turnover</th>
+  <th>Company Website</th>
+  <th>Company Stock Exchange</th>
+  <th>Latest STock Price</th>
+</tr>
+
+</thead>
+<tbody>
+<tr *ngFor='let c of emp'>
+  <td>{{c.companyCode}}</td>
+  <td>{{c.companyName}}</td>
+  <td>{{c.companyCeoName}}</td>
+  <td>{{c.companyTurnover}}</td>
+  <td>{{c.companyWebsite}}</td>
+  <td>{{c.companyStockExchange}}</td>
+  <td>{{c.latestStockPrice}}</td>
+</tr>
+<tr *ngIf="!emp||emp.length==0">  
+    <td colspan="4">  
+        No Data Found  
+    </td>  
+  </tr>
+
+</tbody>
+
+
+</table>
+
+</div>

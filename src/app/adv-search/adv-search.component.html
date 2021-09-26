@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="main-container">
+<h2 class="adv-title">Advance Search</h2>
+<hr/>
+<form #addClientForm="ngForm" (ngSubmit)="advSearch()" novalidate>  
+    <div class="row" style="margin-top:10px;margin-bottom: 10px;">    
+      <div class="col-sm-2 form-group">  </div> 
+        <div class="col-sm-3 form-group" [formGroup]="advSearchFormGroup"> 
+        <label class="adv-search-label" for="compcode">Company Code</label>   
+        <select formControlName="compcode" class="form-control">
+          <option>Choose Company Code</option>  
+          <option *ngFor="let company of companyList">{{company.companyCode}}</option>  
+        </select>  
+      </div> 
+       
+  <div class="col-sm-2 form-group">
+    <label class="adv-search-label" for="startdate">Start Date</label> 
+      <input  
+      type="date" name="startdate"  
+      [(ngModel)]="startdate" max="{{maxDate}}"  
+      placeholder="Start Date"  
+      class="form-control"/>  
+  </div>     
+  <div class="col-sm-2 form-group"> 
+    <label class="adv-search-label" for="enddate">End Date</label>    
+      <input type="date"  name="enddate"  
+      [(ngModel)]="enddate" max="{{maxDate}}"   
+      placeholder="End Date" 
+      class="form-control"/>  
+  </div>    
+  <div class="col-sm-2 form-group">    
+      <button type="submit" class="btn mr-md-2 mb-md-0 mb-2 btn-primary adv-search-btn" >Search</button>   
+  </div>  
+</div>  
+</form>   
+
+
+<br>
+<div class="container">
+    <label *ngIf="errMessage" class="error-message">{{ errMessage }}</label>
+    <label *ngIf="!(stockList.length===0) && !errMessage" for="companyName" class="label-company-name">
+      Company Name: {{companyName}}</label>
+      <br>
+    <label *ngIf="!(stockList.length===0) && !errMessage" for="companyName" class="label-company-name">
+      <u>Company Stock Details</u></label>
+    <table class="table adv-search-table" *ngIf='!(stockList.length===0) && !errMessage'> 
+        <thead>
+          <tr>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>       
+        </thead>
+        <tbody>
+          <tr *ngFor='let stock of stockList'>
+            <td>{{stock.price}}</td>
+            <td>{{stock.date}}</td>
+            <td>{{stock.time}}</td>
+          </tr>
+        </tbody> 
+    </table>
+    <table class="table stock-cal-table" *ngIf='!errMessage && ((minStockPrice) || (maxStockPrice) || (avgStockPrice))'>
+      <tbody>
+        <tr>
+          <td><b>MIN Stock Price:</b></td><td>{{minStockPrice}}</td>
+          <td><b>MAX Stock Price:</b></td><td>{{maxStockPrice}}</td>
+          <td><b>AVG Stock Price:</b></td><td>{{avgStockPrice}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+</div>
